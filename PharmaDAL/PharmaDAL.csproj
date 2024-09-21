@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F67EC45F-EB4C-4BAA-9AB2-6F3C1A2BF24F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PharmaDAL</RootNamespace>
+    <AssemblyName>PharmaDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDao.cs" />
+    <Compile Include="CommonDaoMethods.cs" />
+    <Compile Include="Common\CommonDao.cs" />
+    <Compile Include="Entity\AccountLedgerMaster.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\AccountLedgerType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\AccountType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\AuditHistory.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BillOutStandings.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BillOutStandingsAudjustment.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CheckQuantityIfAvailableForSale_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CompanyItemMapping.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CompanyMaster.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Configuration.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CustomerCompanyDiscountRef.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CustomerLedger.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CustomerType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DeleteInvetoryLineItemInTempTable_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DeleteSaleLineItem_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FIFO.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FirmProperties.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetCustomerLedgerByCode_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetFinalAmountWithTaxForPurchase_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetPurchaseSaleBookHeaderForModify_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetPurchaseSaleBookLineItemsForModify_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetSaleLineItemByCode_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\GetSaleLineItemInfo_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\HSNCode.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ItemMaster.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Menu.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PaymentMode.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonalLedger.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonLedgerType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PersonRouteMaster.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PharmaEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PharmaEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PharmaEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Privledges.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PurchaseSaleBookHeader.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PurchaseSaleBookLineItem.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PurchaseSaleEntryForm.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PurchaseSaleEntryType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RateType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ReceiptPayment.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RecordType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\RolePrivledges.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Roles.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SaleInvoice_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SupplierCompanyDiscountRef.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\SupplierLedger.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TableTypePurchaseSaleBookHeader.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TableTypePurchaseSaleBookLineItem.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TempBillOutStandingsAudjustment.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TempPurchaseSaleBookHeader.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TempPurchaseSaleBookLineItem.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TempReceiptPayment.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TRN.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\UDF_GetAmountWithAllDiscountAmounts_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\udf_GetFinalAmountWithTaxForSale_Result.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Users.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\VoucherType.cs">
+      <DependentUpon>PharmaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Master\AccountLedgerMasterDao.cs" />
+    <Compile Include="Master\CompanyMasterDao.cs" />
+    <Compile Include="Master\CustomerLedgerMasterDao.cs" />
+    <Compile Include="Master\ItemDaoMaster.cs" />
+    <Compile Include="Master\PersonalLedgerMasterDao.cs" />
+    <Compile Include="Master\PersonRouteMasterDao.cs" />
+    <Compile Include="Master\SupplierLedgerMasterDao.cs" />
+    <Compile Include="Master\UserDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction\PurchaseBookDao.cs" />
+    <Compile Include="Transaction\ReceiptPaymentDao.cs" />
+    <Compile Include="Transaction\ReportDao.cs" />
+    <Compile Include="Transaction\SaleEntryDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entity\PharmaEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PharmaEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Entity\PharmaEntity.edmx.diagram">
+      <DependentUpon>PharmaEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PharmaBusinessObjects\PharmaBusinessObjects.csproj">
+      <Project>{8e5639a3-828c-488e-8080-5f335bb8f6b8}</Project>
+      <Name>PharmaBusinessObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\PharmaEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmaEntity.edmx</DependentUpon>
+      <LastGenOutput>PharmaEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\PharmaEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmaEntity.edmx</DependentUpon>
+      <LastGenOutput>PharmaEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

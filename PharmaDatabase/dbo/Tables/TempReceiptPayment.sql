@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[TempReceiptPayment] (
+    [ReceiptPaymentID]          BIGINT          IDENTITY (1, 1) NOT NULL,
+    [VoucherNumber]             NVARCHAR (8)    NOT NULL,
+    [VoucherTypeCode]           NVARCHAR (50)   NOT NULL,
+    [VoucherDate]               DATETIME        NOT NULL,
+    [LedgerType]                NVARCHAR (50)   NULL,
+    [LedgerTypeCode]            NVARCHAR (10)   NULL,
+    [PaymentMode]               NCHAR (1)       NOT NULL,
+    [Ammount]                   DECIMAL (18, 2) NULL,
+    [BillAmmount]               DECIMAL (18, 2) NULL,
+    [BankAccountLedgerTypeCode] NVARCHAR (10)   NULL,
+    [ChequeDate]                DATETIME        NULL,
+    [ChequeClearDate]           DATETIME        NULL,
+    [IsChequeCleared]           BIT             NULL,
+    [POST]                      NVARCHAR (50)   NULL,
+    [PISNumber]                 NVARCHAR (50)   NULL,
+    [ChequeNumber]              NVARCHAR (10)   NULL,
+    [UnadjustedAmount]          DECIMAL (18, 2) NULL,
+    [OldReceiptPaymentID]       BIGINT          NULL,
+    [CreatedBy]                 NVARCHAR (50)   NOT NULL,
+    [CreatedOn]                 DATETIME        NOT NULL,
+    [LedgerTypeName]            VARCHAR (100)   NULL,
+    [BankAccountLedgerTypeName] NVARCHAR (100)  NULL,
+    CONSTRAINT [PK_TempReceiptPayment] PRIMARY KEY CLUSTERED ([ReceiptPaymentID] ASC)
+);
+

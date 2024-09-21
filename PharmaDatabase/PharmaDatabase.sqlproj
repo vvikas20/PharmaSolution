@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>PharmaDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{38e449e9-adf8-4c6d-9cb6-3490a4e570cd}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>PharmaDatabase</RootNamespace>
+    <AssemblyName>PharmaDatabase</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\RateType.sql" />
+    <Build Include="dbo\Tables\PurchaseSaleEntryType.sql" />
+    <Build Include="dbo\Tables\PurchaseSaleBookHeader.sql" />
+    <Build Include="dbo\Tables\Privledges.sql" />
+    <Build Include="dbo\Tables\TempPurchaseSaleBookHeader.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\HSNCode.sql" />
+    <Build Include="dbo\Tables\PersonLedgerType.sql" />
+    <Build Include="dbo\Tables\PersonalLedger.sql" />
+    <Build Include="dbo\Tables\PaymentMode.sql" />
+    <Build Include="dbo\Tables\FirmProperties.sql" />
+    <Build Include="dbo\Tables\Configuration.sql" />
+    <Build Include="dbo\Tables\CompanyMaster.sql" />
+    <Build Include="dbo\Tables\CustomerType.sql" />
+    <Build Include="dbo\Tables\AuditHistory.sql" />
+    <Build Include="dbo\Tables\AccountType.sql" />
+    <Build Include="dbo\Tables\AccountLedgerType.sql" />
+    <Build Include="dbo\Tables\TempReceiptPayment.sql" />
+    <Build Include="dbo\Tables\VoucherType.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\TRN.sql" />
+    <Build Include="dbo\Tables\AccountLedgerMaster.sql" />
+    <Build Include="dbo\Tables\FIFO.sql" />
+    <Build Include="dbo\Tables\BillOutStandings.sql" />
+    <Build Include="dbo\Tables\Menu.sql" />
+    <Build Include="dbo\Tables\RolePrivledges.sql" />
+    <Build Include="dbo\Tables\PersonRouteMaster.sql" />
+    <Build Include="dbo\Tables\PurchaseSaleEntryForm.sql" />
+    <Build Include="dbo\Tables\PurchaseSaleBookLineItem.sql" />
+    <Build Include="dbo\Tables\TempBillOutStandingsAudjustment.sql" />
+    <Build Include="dbo\Tables\SupplierLedger.sql" />
+    <Build Include="dbo\Tables\ItemMaster.sql" />
+    <Build Include="dbo\Tables\BillOutStandingsAudjustment.sql" />
+    <Build Include="dbo\Tables\CustomerLedger.sql" />
+    <Build Include="dbo\Tables\TempPurchaseSaleBookLineItem.sql" />
+    <Build Include="dbo\Tables\CustomerCompanyDiscountRef.sql" />
+    <Build Include="dbo\Tables\SupplierCompanyDiscountRef.sql" />
+    <Build Include="dbo\Tables\RecordType.sql" />
+    <Build Include="dbo\Tables\ReceiptPayment.sql" />
+    <Build Include="dbo\Views\CompanyItemMapping.sql" />
+    <Build Include="dbo\Functions\GetFreeQuantity.sql" />
+    <Build Include="dbo\Functions\UDF_GetAmountWithAllDiscountAmounts.sql" />
+    <Build Include="dbo\Functions\udf_GetFinalAmountWithTaxForSale.sql" />
+    <Build Include="dbo\Stored Procedures\sp_Audit_Trail.sql" />
+    <Build Include="dbo\Stored Procedures\GetPurchaseSaleBookHeaderForModify.sql" />
+    <Build Include="dbo\Stored Procedures\InsertUpdateInvetoryHeadersInTempTable.sql" />
+    <Build Include="dbo\Stored Procedures\SaveReceiptPaymentData.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteSaleEntryData.sql" />
+    <Build Include="dbo\Stored Procedures\SaleInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\GetPurchaseSaleBookLineItemsForModify.sql" />
+    <Build Include="dbo\Stored Procedures\GetCustomerLedgerByCode.sql" />
+    <Build Include="dbo\Stored Procedures\GetSaleLineItemInfo.sql" />
+    <Build Include="dbo\Stored Procedures\GetSaleLineItemByCode.sql" />
+    <Build Include="dbo\Stored Procedures\GetFinalAmountWithTaxForPurchase.sql" />
+    <Build Include="dbo\Stored Procedures\InsertUpdateInvetoryLineItemInTempTableForSale.sql" />
+    <Build Include="dbo\Stored Procedures\InsertUpdateInvetoryLineItemInTempTable.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteSaleLineItem.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteInvetoryLineItemInTempTable.sql" />
+    <Build Include="dbo\Stored Procedures\CheckQuantityIfAvailableForSale.sql" />
+    <Build Include="dbo\Stored Procedures\Test1.sql" />
+    <Build Include="dbo\Stored Procedures\SavePurchaseEntryData.sql" />
+    <Build Include="dbo\Stored Procedures\SaveSaleEntryData.sql" />
+    <Build Include="dbo\User Defined Types\TableTypePurchaseSaleBookLineItem.sql" />
+    <Build Include="dbo\User Defined Types\TableTypePurchaseSaleBookHeader.sql" />
+    <Build Include="dbo\User Defined Types\TableTypeIds.sql" />
+  </ItemGroup>
+</Project>
