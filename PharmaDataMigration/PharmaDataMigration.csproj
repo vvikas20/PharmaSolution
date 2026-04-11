@@ -94,8 +94,8 @@
     <Compile Include="Common.cs" />
     <Compile Include="DataMigrationResult.cs" />
     <Compile Include="Master\AccountLedgerMaster.cs" />
-    <Compile Include="Transaction\BillOutstanding.cs" />
     <Compile Include="Master\CompanyMaster.cs" />
+    <Compile Include="Transaction\BillOutstanding.cs" />
     <Compile Include="Master\CustomerLedgerMaster.cs" />
     <Compile Include="Transaction\BillOutStandingsAudjustmentMigration.cs" />
     <Compile Include="Transaction\FIFO.cs" />
